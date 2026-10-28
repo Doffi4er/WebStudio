@@ -404,8 +404,13 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    color: #2196F3;
-    transition: fill 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+    background-color: transparent;
+    color: #757575;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.social-icon {
+    fill: currentColor;
 }
 
 .social-link:hover,
@@ -418,10 +423,6 @@ body {
     padding-bottom: 24px;
 }
 
-.team-card .social-link {
-    color: #757575;
-}
-
 .footer-social-list {
     margin-top: 24px;
 }
@@ -432,6 +433,6 @@ body {
 
 .footer-social-list .social-link:hover,
 .footer-social-list .social-link:focus {
-    background-color: transparent;
-    color: #2196F3;
+    background-color: #2196F3;
+    color: #FFFFFF;
 }
