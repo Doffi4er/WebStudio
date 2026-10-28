@@ -389,3 +389,49 @@ body {
         background-color: #8CDE00; /* Возврат к исходному цвету */
     }
 }
+
+/* ---------------- ЗАВДАННЯ: SVG-спрайт та іконки соцмереж ---------------- */
+.social-list {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #2196F3;
+    transition: fill 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.social-link:hover,
+.social-link:focus {
+    background-color: #2196F3;
+    color: #FFFFFF;
+}
+
+.team-card .social-list {
+    padding-bottom: 24px;
+}
+
+.team-card .social-link {
+    color: #757575;
+}
+
+.footer-social-list {
+    margin-top: 24px;
+}
+
+.footer-social-list .social-link {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-social-list .social-link:hover,
+.footer-social-list .social-link:focus {
+    background-color: transparent;
+    color: #2196F3;
+}

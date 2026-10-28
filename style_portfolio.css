@@ -301,3 +301,41 @@ body {
 .footer-contact:focus {
     color: #2196F3;
 }
+
+/* ---------------- ЗАВДАННЯ: SVG-спрайт та іконки соцмереж ---------------- */
+.social-list {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #2196F3;
+    transition: fill 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.social-link:hover,
+.social-link:focus {
+    background-color: #2196F3;
+    color: #FFFFFF;
+}
+
+.footer-social-list {
+    margin-top: 24px;
+}
+
+.footer-social-list .social-link {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-social-list .social-link:hover,
+.footer-social-list .social-link:focus {
+    background-color: transparent;
+    color: #2196F3;
+}
