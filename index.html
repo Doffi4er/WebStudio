@@ -85,9 +85,33 @@
             <div class="container">
                 <h2 class="work-title">Чим ми займаємося</h2>
                 <ul class="work-list">
-                    <li class="work-item"><img src="./img/чем мы занимаемся1.jpg" alt="Десктопні додатки"></li>
-                    <li class="work-item"><img src="./img/чем мы занимаемся2.jpg" alt="Мобільні додатки"></li>
-                    <li class="work-item"><img src="./img/чем мы занимаемся3.jpg" alt="Дизайн"></li>
+                                        <li class="work-item">
+                        <!-- ЗАВДАННЯ: адаптивні зображення (секція "Чим ми займаємося").
+                             Додано <picture> + <source media="..."> з дескриптором щільності x (1x/2x) для трьох breakpoints:
+                             мобільна = max-width: 767px; планшетна = 768px–1199px; десктопна = від 1200px (srcset в <img> нижче).
+                             Нові файли лежать у ./img/responsive/work/. Поточні "src" і "alt" НЕ змінено — оригінал лишається fallback. -->
+                        <picture>
+                            <source media="(max-width: 767px)" srcset="./img/responsive/work/work-1-mobile@1x.jpg 1x, ./img/responsive/work/work-1-mobile@2x.jpg 2x">
+                            <source media="(min-width: 768px) and (max-width: 1199px)" srcset="./img/responsive/work/work-1-tablet@1x.jpg 1x, ./img/responsive/work/work-1-tablet@2x.jpg 2x">
+                            <img src="./img/чем мы занимаемся1.jpg" srcset="./img/responsive/work/work-1-desktop@1x.jpg 1x, ./img/responsive/work/work-1-desktop@2x.jpg 2x" alt="Десктопні додатки">
+                        </picture>
+                    </li>
+                                        <li class="work-item">
+                        <!-- ЗАВДАННЯ: адаптивне зображення 1x/2x × мобільний/планшет/десктоп (оригінал у "src" збережено) -->
+                        <picture>
+                            <source media="(max-width: 767px)" srcset="./img/responsive/work/work-2-mobile@1x.jpg 1x, ./img/responsive/work/work-2-mobile@2x.jpg 2x">
+                            <source media="(min-width: 768px) and (max-width: 1199px)" srcset="./img/responsive/work/work-2-tablet@1x.jpg 1x, ./img/responsive/work/work-2-tablet@2x.jpg 2x">
+                            <img src="./img/чем мы занимаемся2.jpg" srcset="./img/responsive/work/work-2-desktop@1x.jpg 1x, ./img/responsive/work/work-2-desktop@2x.jpg 2x" alt="Мобільні додатки">
+                        </picture>
+                    </li>
+                                        <li class="work-item">
+                        <!-- ЗАВДАННЯ: адаптивне зображення 1x/2x × мобільний/планшет/десктоп (оригінал у "src" збережено) -->
+                        <picture>
+                            <source media="(max-width: 767px)" srcset="./img/responsive/work/work-3-mobile@1x.jpg 1x, ./img/responsive/work/work-3-mobile@2x.jpg 2x">
+                            <source media="(min-width: 768px) and (max-width: 1199px)" srcset="./img/responsive/work/work-3-tablet@1x.jpg 1x, ./img/responsive/work/work-3-tablet@2x.jpg 2x">
+                            <img src="./img/чем мы занимаемся3.jpg" srcset="./img/responsive/work/work-3-desktop@1x.jpg 1x, ./img/responsive/work/work-3-desktop@2x.jpg 2x" alt="Дизайн">
+                        </picture>
+                    </li>
                 </ul>
             </div>
         </section>
@@ -97,7 +121,15 @@
                 <h2 class="team-title">Наша команда</h2>
                 <ul class="team-list">
                     <li class="team-card">
-                        <img src="./img/роботники1.jpg" alt="Ігор Дем'яненко">
+                                                <picture>
+                            <!-- ЗАВДАННЯ: адаптивне зображення команди.
+                                 В <img> додано атрибут srcset з десктопними версіями 1x/2x (від 1200px);
+                                 <source> підключають окремі файли для мобільної (до 767px) і планшетної (768–1199px) версій.
+                                 Файли: ./img/responsive/team/. Оригінальні "src" і "alt" НЕ змінено. -->
+                            <source media="(max-width: 767px)" srcset="./img/responsive/team/team-1-mobile@1x.jpg 1x, ./img/responsive/team/team-1-mobile@2x.jpg 2x">
+                            <source media="(min-width: 768px) and (max-width: 1199px)" srcset="./img/responsive/team/team-1-tablet@1x.jpg 1x, ./img/responsive/team/team-1-tablet@2x.jpg 2x">
+                            <img src="./img/роботники1.jpg" srcset="./img/responsive/team/team-1-desktop@1x.jpg 1x, ./img/responsive/team/team-1-desktop@2x.jpg 2x" alt="Ігор Дем'яненко">
+                        </picture>
                         <h3 class="team-name">Ігор Дем'яненко</h3>
                         <p class="team-position">Product Designer</p>
                         <ul class="social-list">
@@ -124,7 +156,12 @@
                         </ul>
                     </li>
                     <li class="team-card">
-                        <img src="./img/роботники2.jpg" alt="Ольга Рєпіна">
+                                                <picture>
+                            <!-- ЗАВДАННЯ: адаптивне зображення 1x/2x × мобільний/планшет/десктоп (оригінал у "src" збережено) -->
+                            <source media="(max-width: 767px)" srcset="./img/responsive/team/team-2-mobile@1x.jpg 1x, ./img/responsive/team/team-2-mobile@2x.jpg 2x">
+                            <source media="(min-width: 768px) and (max-width: 1199px)" srcset="./img/responsive/team/team-2-tablet@1x.jpg 1x, ./img/responsive/team/team-2-tablet@2x.jpg 2x">
+                            <img src="./img/роботники2.jpg" srcset="./img/responsive/team/team-2-desktop@1x.jpg 1x, ./img/responsive/team/team-2-desktop@2x.jpg 2x" alt="Ольга Рєпіна">
+                        </picture>
                         <h3 class="team-name">Ольга Рєпіна</h3>
                         <p class="team-position">Frontend Developer</p>
                         <ul class="social-list">
@@ -151,7 +188,12 @@
                         </ul>
                     </li>
                     <li class="team-card">
-                        <img src="./img/роботники3.jpg" alt="Микола Тарасов">
+                                                <picture>
+                            <!-- ЗАВДАННЯ: адаптивне зображення 1x/2x × мобільний/планшет/десктоп (оригінал у "src" збережено) -->
+                            <source media="(max-width: 767px)" srcset="./img/responsive/team/team-3-mobile@1x.jpg 1x, ./img/responsive/team/team-3-mobile@2x.jpg 2x">
+                            <source media="(min-width: 768px) and (max-width: 1199px)" srcset="./img/responsive/team/team-3-tablet@1x.jpg 1x, ./img/responsive/team/team-3-tablet@2x.jpg 2x">
+                            <img src="./img/роботники3.jpg" srcset="./img/responsive/team/team-3-desktop@1x.jpg 1x, ./img/responsive/team/team-3-desktop@2x.jpg 2x" alt="Микола Тарасов">
+                        </picture>
                         <h3 class="team-name">Микола Тарасов</h3>
                         <p class="team-position">Marketing</p>
                         <ul class="social-list">
@@ -178,7 +220,12 @@
                         </ul>
                     </li>
                     <li class="team-card">
-                        <img src="./img/роботники4.jpg" alt="Михайло Єрмаков">
+                                                <picture>
+                            <!-- ЗАВДАННЯ: адаптивне зображення 1x/2x × мобільний/планшет/десктоп (оригінал у "src" збережено) -->
+                            <source media="(max-width: 767px)" srcset="./img/responsive/team/team-4-mobile@1x.jpg 1x, ./img/responsive/team/team-4-mobile@2x.jpg 2x">
+                            <source media="(min-width: 768px) and (max-width: 1199px)" srcset="./img/responsive/team/team-4-tablet@1x.jpg 1x, ./img/responsive/team/team-4-tablet@2x.jpg 2x">
+                            <img src="./img/роботники4.jpg" srcset="./img/responsive/team/team-4-desktop@1x.jpg 1x, ./img/responsive/team/team-4-desktop@2x.jpg 2x" alt="Михайло Єрмаков">
+                        </picture>
                         <h3 class="team-name">Михайло Єрмаков</h3>
                         <p class="team-position">UI Designer</p>
                         <ul class="social-list">

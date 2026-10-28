@@ -4,12 +4,21 @@
     box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6, p, ul, ol {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
     margin: 0;
     padding: 0;
 }
 
-ul, ol {
+ul,
+ol {
     list-style: none;
 }
 
@@ -210,10 +219,12 @@ body {
         transform: scale(1);
         box-shadow: 0 4px 10px rgba(33, 150, 243, 0.45), 0 0 0 0 rgba(33, 150, 243, 0.6);
     }
+
     50% {
         transform: scale(1.05);
         box-shadow: 0 6px 14px rgba(33, 150, 243, 0.45), 0 0 0 15px rgba(33, 150, 243, 0);
     }
+
     100% {
         transform: scale(1);
         box-shadow: 0 4px 10px rgba(33, 150, 243, 0.45), 0 0 0 0 rgba(33, 150, 243, 0);
@@ -300,15 +311,15 @@ body {
     border-radius: 6px;
     overflow: hidden;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12),
-                0 4px 4px rgba(0, 0, 0, 0.06),
-                1px 4px 6px rgba(0, 0, 0, 0.16);
+        0 4px 4px rgba(0, 0, 0, 0.06),
+        1px 4px 6px rgba(0, 0, 0, 0.16);
     width: calc((100% - 90px) / 4);
     transition: box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-card:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.14),
-                0 12px 24px rgba(33, 150, 243, 0.18);
+        0 12px 24px rgba(33, 150, 243, 0.18);
 }
 
 .team-name {
@@ -350,7 +361,7 @@ body {
 }
 
 .footer-contact {
-    color: rgba(255,255,255,.6);
+    color: rgba(255, 255, 255, .6);
     font-size: 14px;
     line-height: 1.71;
     letter-spacing: 0.03em;
@@ -366,27 +377,36 @@ body {
     0% {
         top: 0;
         left: 0;
-        background-color: #8CDE00; /* Зеленый (старт) */
+        background-color: #8CDE00;
+        /* Зеленый (старт) */
     }
+
     25% {
         top: 0;
         left: 200px;
-        background-color: #2196F3; /* Синий (правый верхний угол) */
+        background-color: #2196F3;
+        /* Синий (правый верхний угол) */
     }
+
     50% {
         top: 200px;
         left: 200px;
-        background-color: #E91E63; /* Розовый (правый нижний угол) */
+        background-color: #E91E63;
+        /* Розовый (правый нижний угол) */
     }
+
     75% {
         top: 200px;
         left: 0;
-        background-color: #FF9800; /* Оранжевый (левый нижний угол) */
+        background-color: #FF9800;
+        /* Оранжевый (левый нижний угол) */
     }
+
     100% {
         top: 0;
         left: 0;
-        background-color: #8CDE00; /* Возврат к исходному цвету */
+        background-color: #8CDE00;
+        /* Возврат к исходному цвету */
     }
 }
 
@@ -435,4 +455,48 @@ body {
 .footer-social-list .social-link:focus {
     background-color: #2196F3;
     color: #FFFFFF;
+    background-size: cover;
+    background-position: center;
+}
+
+@media (min-resolution: 192dpi),
+(min-resolution: 2dppx) {
+    .hero {
+        background-image: url("./img/responsive/backgrounds/hero-desktop@2x.jpg");
+    }
+
+    /* Retina 2x */
+}
+
+@media (max-width: 1199px) {
+    .hero {
+        background-image: url("./img/responsive/backgrounds/hero-tablet@1x.jpg");
+    }
+}
+
+@media (max-width: 1199px) and (min-resolution: 192dpi),
+(max-width: 1199px) and (min-resolution: 2dppx) {
+    .hero {
+        background-image: url("./img/responsive/backgrounds/hero-tablet@2x.jpg");
+    }
+}
+
+@media (max-width: 767px) {
+    .hero {
+        background-image: url("./img/responsive/backgrounds/hero-mobile@1x.jpg");
+    }
+}
+
+@media (max-width: 767px) and (min-resolution: 192dpi),
+(max-width: 767px) and (min-resolution: 2dppx) {
+    .hero {
+        background-image: url("./img/responsive/backgrounds/hero-mobile@2x.jpg");
+    }
+}
+
+@media (min-resolution: 192dpi),
+(min-resolution: 2dppx) {
+    .hero {
+        background-color: #2F303A;
+    }
 }

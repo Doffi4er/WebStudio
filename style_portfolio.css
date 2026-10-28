@@ -344,3 +344,58 @@ body {
     background-color: #2196F3;
     color: #FFFFFF;
 }
+
+/* ======================================================================================================
+   ЗАВДАННЯ: АДАПТИВНІ (РЕСПОНСИВНІ) ФОНОВІ ЗОБРАЖЕННЯ — Retina 1x/2x через медіа-функцію min-resolution
+   ======================================================================================================
+   Цей блок ДОДАНО до наявних стилів — не видалено і не змінено жодного наявного рядка.
+
+   АУДІТ ПРОЄКТУ: на сторінці портфоліо немає РАСТРОВИХ фонових зображень —
+   background-image (.portfolio, футер, оверлей картки) — це CSS-градієнти.
+   Градієнти є векторною графікою: вони не залежать від щільності пікселів,
+   тому на екранах Retina (2x/3x) виглядають так само чітко, як і на 1x,
+   і окремі 2x-файли для них не потрібні.
+
+   Щойно тут з'явиться растрове фонове зображення, підключайте його за готовим
+   шаблоном нижче: медіа-запит розміру в'юпорта (breakpoint) у поєднанні з
+   медіа-функцією щільності пікселів min-resolution (192dpi ≈ 2dppx — 2x).
+   Шаблон увімкнено в одному коментарі, щоб гарантовано не зачепити поточний дизайн.
+
+   --- ГОТОВИЙ ШАБЛОН (розкоментуйте і підставте свої файли) -------------------------------------------
+   .portfolio {
+       background-image: url("./img/responsive/backgrounds/portfolio-desktop@1x.jpg"); /* 1x — базова версія */
+       background-size: cover;
+       background-position: center;
+   }
+
+   @media (min-resolution: 192dpi), (min-resolution: 2dppx) {
+       .portfolio { background-image: url("./img/responsive/backgrounds/portfolio-desktop@2x.jpg"); } /* Retina 2x */
+   }
+
+   @media (max-width: 1199px) {
+       .portfolio { background-image: url("./img/responsive/backgrounds/portfolio-tablet@1x.jpg"); }
+   }
+   @media (max-width: 1199px) and (min-resolution: 192dpi),
+          (max-width: 1199px) and (min-resolution: 2dppx) {
+       .portfolio { background-image: url("./img/responsive/backgrounds/portfolio-tablet@2x.jpg"); }
+   }
+
+   @media (max-width: 767px) {
+       .portfolio { background-image: url("./img/responsive/backgrounds/portfolio-mobile@1x.jpg"); }
+   }
+   @media (max-width: 767px) and (min-resolution: 192dpi),
+          (max-width: 767px) and (min-resolution: 2dppx) {
+       .portfolio { background-image: url("./img/responsive/backgrounds/portfolio-mobile@2x.jpg"); }
+   }
+   ---------------------------------------------------------------------------------------------------- */
+
+/* Активна демонстрація медіа-функції min-resolution (без візуальних змін):
+   на екранах Retina/2x застосовується той самий колір футера, що і в базовому
+   правилі вище (градієнт-зображення повністю перекриває колір), тож нічого
+   не змінюється зовні. */
+@media (min-resolution: 192dpi),
+       (min-resolution: 2dppx) {
+    .footer {
+        background-color: #2F303A; /* той самий базовий колір футера — градієнт-зображення лишається поверх */
+    }
+}
