@@ -188,6 +188,12 @@ body {
         radial-gradient(ellipse at 75% 20%, rgba(33, 150, 243, 0.35) 0%, rgba(33, 150, 243, 0) 55%),
         linear-gradient(rgba(46, 47, 66, 0.88), rgba(46, 47, 66, 0.88)),
         linear-gradient(135deg, #2F303A 0%, #1B1C24 100%);
+    /* ДОДАНО (ретинізація фонів): масштаб і позиція для растрових версій @1x/@2x
+       з ретина-медіазапитів у кінці файлу, щоб зображення не тейлилися.
+       На чистих CSS-градієнтах (desktop 1x) ці властивості нічого не змінюють. */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     padding: 200px 0;
     text-align: center;
 }
@@ -464,8 +470,6 @@ body {
     .hero {
         background-image: url("./img/responsive/backgrounds/hero-desktop@2x.jpg");
     }
-
-    /* Retina 2x */
 }
 
 @media (max-width: 1199px) {

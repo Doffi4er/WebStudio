@@ -6,7 +6,8 @@
     padding: 0;
 }
 
-ul, ol {
+ul,
+ol {
     list-style: none;
 }
 
@@ -84,7 +85,7 @@ body {
 }
 
 .header-menu-item {
-    position: relative; 
+    position: relative;
 }
 
 .header-menu-link {
@@ -142,6 +143,12 @@ body {
 .portfolio {
     padding: 94px 0;
     background: linear-gradient(180deg, #FFFFFF 0%, #F5F4FA 100%);
+    /* ДОДАНО (ретинізація фонів): масштаб і позиція для растрових версій @1x/@2x
+       з ретина-медіазапитів у кінці файлу, щоб зображення не тейлилися.
+       На чистому CSS-градієнті (desktop 1x) ці властивості нічого не змінюють. */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .filter-list {
@@ -162,8 +169,8 @@ body {
     border: none;
     border-radius: 4px;
     transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-                color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-                box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter-button:hover,
@@ -171,9 +178,9 @@ body {
 .filter-button-active {
     background: linear-gradient(180deg, #42A5F5 0%, #1E88E5 100%);
     color: #FFFFFF;
-    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 
-                0px 1px 2px rgba(0, 0, 0, 0.08), 
-                0px 2px 2px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+        0px 1px 2px rgba(0, 0, 0, 0.08),
+        0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .portfolio-list {
@@ -196,14 +203,14 @@ body {
 
 .portfolio-card:hover,
 .portfolio-card:focus {
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 
-                0px 4px 4px rgba(0, 0, 0, 0.06), 
-                1px 4px 6px rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+        0px 4px 4px rgba(0, 0, 0, 0.06),
+        1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .portfolio-thumb {
     position: relative;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 /* ---------------- ЗАВДАННЯ 2: Анімація оверлею через @keyframes ---------------- */
@@ -225,6 +232,7 @@ body {
     from {
         transform: translateY(100%);
     }
+
     to {
         transform: translateY(0);
     }
@@ -343,59 +351,52 @@ body {
 .footer-social-list .social-link:focus {
     background-color: #2196F3;
     color: #FFFFFF;
+    background-size: cover;
+    background-position: center;
 }
 
-/* ======================================================================================================
-   ЗАВДАННЯ: АДАПТИВНІ (РЕСПОНСИВНІ) ФОНОВІ ЗОБРАЖЕННЯ — Retina 1x/2x через медіа-функцію min-resolution
-   ======================================================================================================
-   Цей блок ДОДАНО до наявних стилів — не видалено і не змінено жодного наявного рядка.
+/* Р—РђР’Р”РђРќРќРЇ: Р Р•РўРРќР†Р—РђР¦Р†РЇ Р¤РћРќРЈ РџРћР РўР¤РћР›Р†Рћ вЂ” Retina 1x/2x Г— Mobile/Tablet/Desktop.
+   Р¤Р°Р№Р»Рё ./img/responsive/backgrounds/: mobile 480x720|960x1440, tablet 768x720|1536x1440,
+   desktop@2x 3200x1440; РєРѕР¶РµРЅ @2x вЂ” РѕРєСЂРµРјРёР№ СЂРµРЅРґРµСЂ Сѓ РїРѕРґРІРѕС”РЅС–Р№ СЂРѕР·РґС–Р»СЊРЅС–Р№ Р·РґР°С‚РЅРѕСЃС‚С–
+   (РЅРµ РїРµСЂРµР№РјРµРЅРѕРІР°РЅС– 1x-РєРѕРїС–С—), РїС–РєСЃРµР»СЊРЅРѕ РІС–РґС‚РІРѕСЂСЋС” РЅР°СЏРІРЅРёР№ РіСЂР°РґС–С”РЅС‚ .portfolio.
+   Desktop Сѓ РІРµСЂСЃС–С— 1x Р»РёС€Р°С”С‚СЊСЃСЏ РІРµРєС‚РѕСЂРЅРёРј CSS-РіСЂР°РґС–С”РЅС‚РѕРј Р±Р°Р·РѕРІРѕРіРѕ РїСЂР°РІРёР»Р° .portfolio.
+   РџРѕСЂСЏРґРѕРє Р·Р°РїРёС‚С–РІ РІР°Р¶Р»РёРІРёР№: РІСѓР·СЊРєС– breakpoint'Рё РїС–Р·РЅС–С€Рµ РїРµСЂРµРєСЂРёРІР°СЋС‚СЊ С€РёСЂС€С– вЂ”
+   С†Рµ СЃРєРѕРјРїС–Р»СЊРѕРІР°РЅРёР№ РµРєРІС–РІР°Р»РµРЅС‚ РІРєР»Р°РґРµРЅРёС… SCSS-РјРµРґС–Р°Р·Р°РїРёС‚С–РІ (РїСЂРѕС”РєС‚ РЅР° С‡РёСЃС‚РѕРјСѓ CSS). */@media (min-resolution: 192dpi),
+(min-resolution: 2dppx) {
+    .portfolio {
+        background-image: url("./img/responsive/backgrounds/portfolio-desktop@2x.jpg");
+    }
+}
 
-   АУДІТ ПРОЄКТУ: на сторінці портфоліо немає РАСТРОВИХ фонових зображень —
-   background-image (.portfolio, футер, оверлей картки) — це CSS-градієнти.
-   Градієнти є векторною графікою: вони не залежать від щільності пікселів,
-   тому на екранах Retina (2x/3x) виглядають так само чітко, як і на 1x,
-   і окремі 2x-файли для них не потрібні.
+@media (max-width: 1199px) {
+    .portfolio {
+        background-image: url("./img/responsive/backgrounds/portfolio-tablet@1x.jpg");
+    }
+}
 
-   Щойно тут з'явиться растрове фонове зображення, підключайте його за готовим
-   шаблоном нижче: медіа-запит розміру в'юпорта (breakpoint) у поєднанні з
-   медіа-функцією щільності пікселів min-resolution (192dpi ≈ 2dppx — 2x).
-   Шаблон увімкнено в одному коментарі, щоб гарантовано не зачепити поточний дизайн.
+@media (max-width: 1199px) and (min-resolution: 192dpi),
+(max-width: 1199px) and (min-resolution: 2dppx) {
+    .portfolio {
+        background-image: url("./img/responsive/backgrounds/portfolio-tablet@2x.jpg");
+    }
+}
 
-   --- ГОТОВИЙ ШАБЛОН (розкоментуйте і підставте свої файли) -------------------------------------------
-   .portfolio {
-       background-image: url("./img/responsive/backgrounds/portfolio-desktop@1x.jpg"); /* 1x — базова версія */
-       background-size: cover;
-       background-position: center;
-   }
+@media (max-width: 767px) {
+    .portfolio {
+        background-image: url("./img/responsive/backgrounds/portfolio-mobile@1x.jpg");
+    }
+}
 
-   @media (min-resolution: 192dpi), (min-resolution: 2dppx) {
-       .portfolio { background-image: url("./img/responsive/backgrounds/portfolio-desktop@2x.jpg"); } /* Retina 2x */
-   }
+@media (max-width: 767px) and (min-resolution: 192dpi),
+(max-width: 767px) and (min-resolution: 2dppx) {
+    .portfolio {
+        background-image: url("./img/responsive/backgrounds/portfolio-mobile@2x.jpg");
+    }
+}
 
-   @media (max-width: 1199px) {
-       .portfolio { background-image: url("./img/responsive/backgrounds/portfolio-tablet@1x.jpg"); }
-   }
-   @media (max-width: 1199px) and (min-resolution: 192dpi),
-          (max-width: 1199px) and (min-resolution: 2dppx) {
-       .portfolio { background-image: url("./img/responsive/backgrounds/portfolio-tablet@2x.jpg"); }
-   }
-
-   @media (max-width: 767px) {
-       .portfolio { background-image: url("./img/responsive/backgrounds/portfolio-mobile@1x.jpg"); }
-   }
-   @media (max-width: 767px) and (min-resolution: 192dpi),
-          (max-width: 767px) and (min-resolution: 2dppx) {
-       .portfolio { background-image: url("./img/responsive/backgrounds/portfolio-mobile@2x.jpg"); }
-   }
-   ---------------------------------------------------------------------------------------------------- */
-
-/* Активна демонстрація медіа-функції min-resolution (без візуальних змін):
-   на екранах Retina/2x застосовується той самий колір футера, що і в базовому
-   правилі вище (градієнт-зображення повністю перекриває колір), тож нічого
-   не змінюється зовні. */
 @media (min-resolution: 192dpi),
-       (min-resolution: 2dppx) {
+(min-resolution: 2dppx) {
     .footer {
-        background-color: #2F303A; /* той самий базовий колір футера — градієнт-зображення лишається поверх */
+        background-color: #2F303A;
     }
 }

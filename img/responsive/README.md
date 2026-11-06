@@ -28,17 +28,35 @@
 
 - **Контентні зображення (`<img>`)** — через `<picture>` + `<source media="...">` з
   дескрипторами `1x`/`2x`, а для десктопа — `srcset` безпосередньо в `<img>`.
-- **Фонові зображення (CSS)** — у проєкті наразі тільки CSS-градієнти (векторні),
-  готовий шаблон з `min-resolution: 192dpi / 2dppx` додано коментарем у кінець
-  `style.css` та `style_portfolio.css`.
+- **Фонове зображення hero (`style.css`)** — растрові версії у `img/responsive/backgrounds/`,
+  перемикання через ретина-медіазапити `min-resolution: 192dpi / 2dppx` у кінці файлу
+  (блок із докладним коментарем). Кожен `@2x` — окремий рендер у подвоєній роздільній
+  здатності, що піксельно повторює наявний дизайн hero (не перейменовані 1x-копії):
+
+| Файл hero                       | Роздільна здатність | Призначення                |
+|---------------------------------|---------------------|----------------------------|
+| `backgrounds/hero-mobile@1x.jpg`  | 480×720           | hero, в'юпорт ≤ 767px, 1x  |
+| `backgrounds/hero-mobile@2x.jpg`  | 960×1440          | hero, в'юпорт ≤ 767px, 2x  |
+| `backgrounds/hero-tablet@1x.jpg`  | 768×720           | hero, 768–1199px, 1x       |
+| `backgrounds/hero-tablet@2x.jpg`  | 1536×1440         | hero, 768–1199px, 2x       |
+| `backgrounds/hero-desktop@2x.jpg` | 3200×1440         | hero, ≥ 1200px, 2x         |
+
+  Десктоп у форматі 1x свідомо лишається векторними CSS-градієнтами базового
+  правила `.hero`: градієнти не залежать від щільності пікселів і на Retina
+  виглядають так само чітко, тож окремий 1x-файл їм не потрібен.
+- **Сторінка портфоліо (`style_portfolio.css`)** — растрових фонових зображень немає
+  (тільки CSS-градієнти — векторна графіка, ретинізація не потрібна); готовий шаблон
+  з `min-resolution: 192dpi / 2dppx` додано коментарем у кінець файлу.
 
 ## Структура
 
 ```
 img/responsive/
-├── work/        work-1..3-{mobile,tablet,desktop}@{1x,2x}.jpg
-├── team/        team-1..4-{mobile,tablet,desktop}@{1x,2x}.jpg
-└── portfolio/   portfolio-1..9-{mobile,tablet,desktop}@{1x,2x}.jpg
+├── work/         work-1..3-{mobile,tablet,desktop}@{1x,2x}.jpg
+├── team/         team-1..4-{mobile,tablet,desktop}@{1x,2x}.jpg
+├── portfolio/    portfolio-1..9-{mobile,tablet,desktop}@{1x,2x}.jpg
+└── backgrounds/  hero-{mobile,tablet,desktop}@{1x,2x}.jpg (фони hero)
 ```
 
-Всього згенеровано 96 файлів (16 джерел × 3 breakpoints × 2 щільності).
+Всього згенеровано **101 файл**: 96 контентних (16 джерел × 3 breakpoints × 2 щільності) +
+5 растрових фонів hero.
